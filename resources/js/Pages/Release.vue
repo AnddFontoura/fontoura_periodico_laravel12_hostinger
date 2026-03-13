@@ -96,11 +96,7 @@
             </ul>
 
             <pagination
-                :links="{
-                    prev: articles.prev_page_url,
-                    next: articles.next_page_url
-                }"
-                :pages="articles.links"
+                :links="articles.links"
             />
         </div>
     </website-layout>
@@ -129,8 +125,10 @@ export default {
         return {
         }
     },
+    mounted() {
+      console.log(this.articles)
+    },
     computed() {
-        console.log(this.articles)
     },
     methods: {
 

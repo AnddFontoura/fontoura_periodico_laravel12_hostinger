@@ -2,13 +2,17 @@
 import { Link } from '@inertiajs/vue3'
 
 defineProps({
-    links: Array
+  links: {
+    type: Array,
+    default: () => []
+  }
 })
+
 </script>
 
 <template>
     <div class="flex gap-2 mt-6">
-        <template v-for="link in links" :key="link.url">
+        <template v-for="link in links" :key="link.label">
           <span
               v-if="!link.url"
               class="px-3 py-1 border rounded text-gray-400"
