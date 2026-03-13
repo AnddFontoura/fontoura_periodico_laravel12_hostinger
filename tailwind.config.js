@@ -15,6 +15,10 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+            colors: {
+                fontoura: "rgb(30,87,153)",
+                fontoura_light: "rgb(rgb(47,131,226)",
+            }
         },
     },
 

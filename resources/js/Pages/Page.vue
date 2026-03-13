@@ -1,7 +1,6 @@
 <template>
     <website-layout>
         <div
-            v-html="homePage.description ?? null"
             class="
                 px-4
                 sm:px-6
@@ -13,6 +12,31 @@
                 lg:basis-3/4
             "
         >
+            <div
+                class="
+                    mb-3
+                    border-black
+                "
+            >
+                <h1
+                    class="
+                        text-2xl/7
+                        font-bold
+                        text-gray-900
+                        sm:truncate
+                        sm:text-3xl
+                        sm:tracking-tight
+                        dark:text-white
+                    "
+                >
+                    {{ page.name }}
+                </h1>
+            </div>
+            
+            <div
+                v-html="page.description ?? null"
+            >
+            </div>
         </div>
     </website-layout>
 </template>
@@ -27,13 +51,13 @@ export default {
         PublicationRightMenu,
     },
     props: {
-        homePage: {
+        page: {
             type: Object,
         },
     },
     data() {
-      return {
-      }
+        return {
+        }
     },
     computed: {
 
