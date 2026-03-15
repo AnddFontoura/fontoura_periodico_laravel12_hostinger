@@ -82,7 +82,7 @@
                     "
                 >
                     <div class="flex h-16 shrink-0 items-center">
-                        <img class="h-8 w-auto" src="/public/img/logo_fontoura.png" alt="Fontoura Editora" />
+                        <img class="h-8 w-auto" src="public/img/logo_fontoura.png" alt="Fontoura Editora" />
                     </div>
                     <nav class="flex flex-1 flex-col">
                         <ul role="list" class="flex flex-1 flex-col gap-y-7">
