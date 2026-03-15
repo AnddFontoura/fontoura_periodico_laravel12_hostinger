@@ -59,7 +59,7 @@
                     "
                 >
                     <a
-                        :href="'/publications/release/' + release.id"
+                        :href="'./publications/release/' + release.id"
                         class="
                             block
                             w-full

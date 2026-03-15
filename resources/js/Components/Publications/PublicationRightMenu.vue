@@ -5,7 +5,7 @@
         class="mt-2 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-3 gap-2"
     >
         <li v-for="publication in this.publications" :key="publication.id">
-            <a :href="'/publications/' + publication.id">
+            <a :href="'./publications/' + publication.id">
                 <button
                     class="
                         w-full

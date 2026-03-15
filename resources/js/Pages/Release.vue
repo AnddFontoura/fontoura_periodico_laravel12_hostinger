@@ -60,7 +60,7 @@
                     "
                 >
                     <a
-                        :href="'/publications/release/article/' + article.id"
+                        :href="'./publications/release/article/' + article.id"
                         class="
                             block
                             w-full

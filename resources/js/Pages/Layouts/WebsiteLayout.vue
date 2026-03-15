@@ -28,7 +28,7 @@
                                                 <ul role="list" class="-mx-2 space-y-1">
                                                     <li v-for="page in pages" :key="page.name">
                                                         <a
-                                                            :href="'/page/' + page.slug"
+                                                            :href="'./page/' + page.slug"
                                                             class="
                                                                 text-indigo-200
                                                                 hover:bg-gray-100
@@ -90,7 +90,7 @@
                                 <ul role="list" class="-mx-2 space-y-1">
                                     <li v-for="page in pages" :key="page.name">
                                         <a
-                                            :href="'/page/' + page.slug"
+                                            :href="'./page/' + page.slug"
                                             class="
                                                 text-indigo-200
                                                 hover:bg-gray-100
