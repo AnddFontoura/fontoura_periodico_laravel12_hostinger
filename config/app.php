@@ -1,4 +1,4 @@
-<?php
+    <?php
 
 return [
 
@@ -14,6 +14,7 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
+    'base' => env('APP_BASE', '/periodico/'),
 
     /*
     |--------------------------------------------------------------------------
