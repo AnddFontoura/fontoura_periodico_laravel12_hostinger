@@ -8,7 +8,7 @@ import { ZiggyVue } from '../../vendor/tightenco/ziggy';
 import '@vueup/vue-quill/dist/vue-quill.snow.css'
 import 'quill/dist/quill.snow.css'
 
-const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
+const appName = import.meta.env.VITE_APP_NAME || 'Fontoura Periódicos';
 
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PublicationController;
 use App\Http\Controllers\ReleaseController;
@@ -64,7 +65,18 @@ Route::middleware('auth')->group(function () {
                 Route::get('/show/{id}', [ArticleController::class, 'show'])->name('show');
                 Route::delete('/delete/{id}', [ArticleController::class, 'delete'])->name('delete');
             });
+
+            Route::prefix('pages')->name('pages.')->group(function () {
+                Route::get('/', [PageController::class, 'index'])->name('index');
+                Route::get('/create', [PageController::class, 'create'])->name('create');
+                Route::get('/edit/{id}', [PageController::class, 'create'])->name('edit');
+                Route::post('/save', [PageController::class, 'saveOrUpdate'])->name('save');
+                Route::put('/update/{id}', [PageController::class, 'saveOrUpdate'])->name('update');
+                Route::get('/show/{id}', [PageController::class, 'show'])->name('show');
+                Route::delete('/delete/{id}', [PageController::class, 'delete'])->name('delete');
+            });
         });
     });
 });
+
 require __DIR__.'/auth.php';

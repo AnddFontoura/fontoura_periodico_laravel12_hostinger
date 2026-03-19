@@ -70,7 +70,7 @@ const roles = page.props.auth?.roles || []
 
                 <NavLink
                     v-if="roles.includes('admin')"
-                    :href="route('dashboard')"
+                    :href="route('control-panel.pages.index')"
                     :active="route().current('pages')"
                 >
                   Páginas

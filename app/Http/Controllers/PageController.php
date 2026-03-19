@@ -50,7 +50,7 @@ class PageController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Page $pages)
+    public function saveOrUpdate(Request $request, Page $pages)
     {
         //
     }
@@ -58,7 +58,7 @@ class PageController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Page $pages)
+    public function delete(Page $pages)
     {
         //
     }
