@@ -18,4 +18,13 @@ class ArticleRepository extends BaseRepository
             ->where('release_id', $releaseId)
             ->paginate(15);
     }
+
+    public function updateById(int $id, array $data): int
+    {
+        unset($data['pdf']);
+
+        return $this->model
+            ->where('id', $id)
+            ->update($data);
+    }
 }
