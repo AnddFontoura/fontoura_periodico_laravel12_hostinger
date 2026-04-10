@@ -41,7 +41,7 @@ Route::middleware('auth')->group(function () {
                 Route::get('/create', [PublicationController::class, 'create'])->name('create');
                 Route::get('/edit/{id}', [PublicationController::class, 'create'])->name('edit');
                 Route::post('/save', [PublicationController::class, 'saveOrUpdate'])->name('save');
-                Route::put('/update/{id}', [PublicationController::class, 'saveOrUpdate'])->name('update');
+                Route::post('/update/{id}', [PublicationController::class, 'saveOrUpdate'])->name('update');
                 Route::get('/show/{id}', [PublicationController::class, 'show'])->name('show');
                 Route::delete('/delete/{id}', [PublicationController::class, 'delete'])->name('delete');
             });
