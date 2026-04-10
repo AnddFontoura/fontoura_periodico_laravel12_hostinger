@@ -26,11 +26,11 @@ class PublicationController extends Controller
         ]);
     }
 
-    public function create(int $id = null)
+    public function create(?int $id = null)
     {
         $publication = null;
 
-        if ($id !== null) {
+        if ($id) {
             $publication = $this->publicationRepository->getById($id);
         }
 
@@ -43,7 +43,7 @@ class PublicationController extends Controller
     {
         $data = $request->validated();
 
-        if ($id !== null) {
+        if ($id) {
             $publication = $this->publicationRepository->updateById($id, $data);
         } else {
             $publication = $this->publicationRepository->create($data);

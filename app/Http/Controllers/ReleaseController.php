@@ -30,11 +30,11 @@ class ReleaseController extends Controller
         ]);
     }
 
-    public function create(int $id = null)
+    public function create(?int $id = null)
     {
         $release = null;
 
-        if ($id !== null) {
+        if ($id) {
             $release = $this->releaseRepository->getById($id);
         }
 
@@ -48,7 +48,7 @@ class ReleaseController extends Controller
     {
         $data = $request->validated();
 
-        if ($id !== null) {
+        if ($id) {
             $releases = $this->releaseRepository->updateById($id, $data);
         } else {
             $releases = $this->releaseRepository->create($data);
