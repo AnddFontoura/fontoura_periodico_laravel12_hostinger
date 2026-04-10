@@ -49,7 +49,8 @@ class ArticleController extends Controller
         $data = $request->validated();
 
         if ($id !== null) {
-            $article = $this->articleRepository->updateById($id, $data);
+            $this->articleRepository->updateById($id, $data);
+            $article = $this->articleRepository->getById($id);
         } else {
             $article = $this->articleRepository->create($data);
         }
