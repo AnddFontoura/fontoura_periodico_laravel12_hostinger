@@ -315,29 +315,30 @@ export default {
                 ? route('control-panel.articles.update', this.article.id)
                 : route('control-panel.articles.save')
 
-            const method = this.article ? 'put' : 'post'
+            const isUpdate = !!this.article
 
-            this.form[method](url, {
+            this.form.post(url, {
                 preserveScroll: true,
                 forceFormData: true,
+                data: isUpdate ? { _method: 'PUT' } : {},
 
                 onSuccess: () => {
-                    if (method === 'post') {
-                        this.form.reset()
-                        if (this.$refs.pdfInput) {
-                            this.$refs.pdfInput.value = null
-                        }
+                  if (!isUpdate) {
+                    this.form.reset()
+                    if (this.$refs.pdfInput) {
+                      this.$refs.pdfInput.value = null
                     }
+                  }
 
-                    Swal.fire({
-                        toast: true,
-                        position: 'top-end',
-                        icon: 'success',
-                        title: this.alert.title,
-                        text: this.alert.message,
-                        showConfirmButton: false,
-                        timer: 2500,
-                    })
+                  Swal.fire({
+                      toast: true,
+                      position: 'top-end',
+                      icon: 'success',
+                      title: this.alert.title,
+                      text: this.alert.message,
+                      showConfirmButton: false,
+                      timer: 2500,
+                  })
                 },
 
                 onFail: (response) => {
