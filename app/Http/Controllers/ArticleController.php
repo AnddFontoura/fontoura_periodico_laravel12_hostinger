@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Article\ArticleCreateOrUpdateRequest;
 use App\Http\Requests\Article\ArticleListRequest;
 use App\Http\Requests\Publication\PublicationCreateOrUpdateRequest;
 use App\Repository\Article\ArticleRepository;
@@ -43,7 +44,7 @@ class ArticleController extends Controller
         ]);
     }
 
-    public function saveOrUpdate(PublicationCreateOrUpdateRequest $request, ?int $id = null)
+    public function saveOrUpdate(ArticleCreateOrUpdateRequest $request, ?int $id = null)
     {
         $data = $request->validated();
 
