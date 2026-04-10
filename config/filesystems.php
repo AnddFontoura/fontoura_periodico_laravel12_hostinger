@@ -41,10 +41,17 @@ return [
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
-            'url' =>env('APP_URL'). env('APP_PUBLIC_PATH', '') . '/storage',
+            'url' => env('APP_URL'). env('APP_PUBLIC_PATH', '') . '/storage',
             'visibility' => 'public',
             'throw' => false,
             'report' => false,
+        ],
+
+        'articles' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public') . '/articles',
+            'url' => env('APP_URL'). env('APP_PUBLIC_PATH', '') . '/storage',
+            'visibility' => 'public',
         ],
 
         's3' => [
