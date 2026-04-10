@@ -14,7 +14,8 @@ class ReleaseCreateOrUpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'required|string|max:255',
+            'publication_id' => 'required|exists:publications,id',
         ];
     }
 }

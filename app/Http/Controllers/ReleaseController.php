@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Publication\PublicationCreateOrUpdateRequest;
+use App\Http\Requests\Release\ReleaseCreateOrUpdateRequest;
 use App\Http\Requests\Release\ReleaseListRequest;
 use App\Models\Publication;
 use App\Repository\Publication\PublicationRepository;
@@ -43,7 +44,7 @@ class ReleaseController extends Controller
         ]);
     }
 
-    public function saveOrUpdate(PublicationCreateOrUpdateRequest $request, ?int $id = null)
+    public function saveOrUpdate(ReleaseCreateOrUpdateRequest $request, ?int $id = null)
     {
         $data = $request->validated();
 
