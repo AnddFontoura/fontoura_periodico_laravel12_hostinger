@@ -15,7 +15,6 @@ class PublicationCreateOrUpdateRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:255',
-            'release_id' => 'required|exists:releases,id'
         ];
     }
 }
