@@ -56,7 +56,7 @@ class ArticleController extends Controller
         }
 
         if ($data['pdf']) {
-            $fileName = Storage::disk('public')->put('', $request['pdf']);
+            $fileName = Storage::disk('public')->put('articles', $request['pdf']);
 
             $article->path = $fileName;
             $article->save();
