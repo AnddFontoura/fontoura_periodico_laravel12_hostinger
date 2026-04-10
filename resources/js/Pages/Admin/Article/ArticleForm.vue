@@ -315,7 +315,7 @@ export default {
                 ? route('control-panel.articles.update', this.article.id)
                 : route('control-panel.articles.save')
 
-            const method = this.article ? 'put' : 'post'
+            const method = 'post'
 
             this.form[method](url, {
                 preserveScroll: true,

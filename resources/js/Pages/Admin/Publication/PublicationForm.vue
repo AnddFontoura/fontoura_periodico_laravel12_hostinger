@@ -158,7 +158,7 @@ export default {
                 ? route('control-panel.publications.update', this.publication.id)
                 : route('control-panel.publications.save')
 
-            const method = this.publication ? 'put' : 'post'
+            const method = 'post'
 
             this.form[method](url, {
                 preserveScroll: true,
