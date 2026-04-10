@@ -41,7 +41,7 @@ Route::middleware('auth')->group(function () {
                 Route::get('/create', [PublicationController::class, 'create'])->name('create');
                 Route::get('/edit/{id}', [PublicationController::class, 'create'])->name('edit');
                 Route::post('/save', [PublicationController::class, 'saveOrUpdate'])->name('save');
-                Route::put('/update/{id}', [PublicationController::class, 'saveOrUpdate'])->name('update');
+                Route::post('/update/{id}', [PublicationController::class, 'saveOrUpdate'])->name('update');
                 Route::get('/show/{id}', [PublicationController::class, 'show'])->name('show');
                 Route::delete('/delete/{id}', [PublicationController::class, 'delete'])->name('delete');
             });
@@ -51,7 +51,7 @@ Route::middleware('auth')->group(function () {
                 Route::get('/create', [ReleaseController::class, 'create'])->name('create');
                 Route::get('/edit/{id}', [ReleaseController::class, 'create'])->name('edit');
                 Route::post('/save', [ReleaseController::class, 'saveOrUpdate'])->name('save');
-                Route::put('/update/{id}', [ReleaseController::class, 'saveOrUpdate'])->name('update');
+                Route::post('/update/{id}', [ReleaseController::class, 'saveOrUpdate'])->name('update');
                 Route::get('/show/{id}', [ReleaseController::class, 'show'])->name('show');
                 Route::delete('/delete/{id}', [ReleaseController::class, 'delete'])->name('delete');
             });
@@ -61,7 +61,7 @@ Route::middleware('auth')->group(function () {
                 Route::get('/create', [ArticleController::class, 'create'])->name('create');
                 Route::get('/edit/{id}', [ArticleController::class, 'create'])->name('edit');
                 Route::post('/save', [ArticleController::class, 'saveOrUpdate'])->name('save');
-                Route::put('/update/{id}', [ArticleController::class, 'saveOrUpdate'])->name('update');
+                Route::post('/update/{id}', [ArticleController::class, 'saveOrUpdate'])->name('update');
                 Route::get('/show/{id}', [ArticleController::class, 'show'])->name('show');
                 Route::delete('/delete/{id}', [ArticleController::class, 'delete'])->name('delete');
             });
@@ -71,7 +71,7 @@ Route::middleware('auth')->group(function () {
                 Route::get('/create', [PageController::class, 'create'])->name('create');
                 Route::get('/edit/{id}', [PageController::class, 'create'])->name('edit');
                 Route::post('/save', [PageController::class, 'saveOrUpdate'])->name('save');
-                Route::put('/update/{id}', [PageController::class, 'saveOrUpdate'])->name('update');
+                Route::post('/update/{id}', [PageController::class, 'saveOrUpdate'])->name('update');
                 Route::get('/show/{id}', [PageController::class, 'show'])->name('show');
                 Route::delete('/delete/{id}', [PageController::class, 'delete'])->name('delete');
             });

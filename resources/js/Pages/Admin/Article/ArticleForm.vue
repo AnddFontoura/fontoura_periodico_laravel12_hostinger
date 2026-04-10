@@ -320,7 +320,6 @@ export default {
             this.form.post(url, {
                 preserveScroll: true,
                 forceFormData: true,
-                data: isUpdate ? { _method: 'PUT' } : {},
 
                 onSuccess: () => {
                   if (!isUpdate) {
