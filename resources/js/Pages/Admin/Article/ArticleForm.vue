@@ -203,12 +203,20 @@
                                         "
                                     >
                                         <input
+                                            ref="pdfInput"
                                             type="file"
+                                            accept="application/pdf,.pdf"
                                             class="rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
                                             @change="form.pdf = $event.target.files[0]"
                                         />
-
                                     </div>
+
+                                    <p
+                                        v-if="article?.path"
+                                        class="mt-2 text-sm text-gray-600"
+                                    >
+                                        PDF atual: {{ article.path }}
+                                    </p>
 
                                     <InputError
                                         :message="this.article?.path"
@@ -285,7 +293,7 @@ export default {
                 resume: this.article?.resume ?? '',
                 abstract: this.article?.abstract ?? '',
                 keywords: this.article?.keywords ?? '',
-                pdf: '',
+                pdf: null,
             }),
             errors: {
                 name: ''
@@ -316,7 +324,9 @@ export default {
                 onSuccess: () => {
                     if (method === 'post') {
                         this.form.reset()
-                        this.$refs.input.value = null
+                        if (this.$refs.pdfInput) {
+                            this.$refs.pdfInput.value = null
+                        }
                     }
 
                     Swal.fire({
