@@ -55,8 +55,7 @@ class ArticleController extends Controller
         }
 
         if ($data['pdf']) {
-            //$fileName = $article->id . Str::slug($article->name) . Carbon::now()->timestamp;
-            $fileName = Storage::disk('public')->put('articles', $request['pdf']);
+            $fileName = Storage::disk('public')->put('', $request['pdf']);
 
             $article->path = $fileName;
             $article->save();
