@@ -158,25 +158,25 @@ export default {
                 ? route('control-panel.publications.update', this.publication.id)
                 : route('control-panel.publications.save')
 
-            const method = this.publication ? 'put' : 'post'
+          const isUpdate = !!this.publication
 
-            this.form[method](url, {
+            this.form.post(url, {
                 preserveScroll: true,
 
                 onSuccess: () => {
-                    if (method === 'post') {
-                        this.form.reset()
-                    }
+                  if (!isUpdate) {
+                    this.form.reset()
+                  }
 
-                    Swal.fire({
-                        toast: true,
-                        position: 'top-end',
-                        icon: 'success',
-                        title: this.alert.title,
-                        text: this.alert.message,
-                        showConfirmButton: false,
-                        timer: 2500,
-                    })
+                  Swal.fire({
+                      toast: true,
+                      position: 'top-end',
+                      icon: 'success',
+                      title: this.alert.title,
+                      text: this.alert.message,
+                      showConfirmButton: false,
+                      timer: 2500,
+                  })
                 },
 
                 onFail: (response) => {

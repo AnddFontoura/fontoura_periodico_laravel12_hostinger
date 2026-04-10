@@ -58,7 +58,7 @@
                             </header>
 
                             <form
-                                @submit.prevent="saveOrUpdatePublication()"
+                                @submit.prevent="saveOrUpdateArticle()"
                                 class="mt-6 space-y-6"
                             >
                                 <div>
@@ -310,7 +310,7 @@ export default {
         }
     },
     methods: {
-        saveOrUpdatePublication() {
+        saveOrUpdateArticle() {
             const url = this.article
                 ? route('control-panel.articles.update', this.article.id)
                 : route('control-panel.articles.save')

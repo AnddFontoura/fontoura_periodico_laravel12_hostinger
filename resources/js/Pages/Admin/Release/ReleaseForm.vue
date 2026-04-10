@@ -58,7 +58,7 @@
                             </header>
 
                             <form
-                                @submit.prevent="saveOrUpdatePublication()"
+                                @submit.prevent="saveOrUpdateRelease()"
                                 class="mt-6 space-y-6"
                             >
                                 <div>
@@ -177,30 +177,30 @@ export default {
         }
     },
     methods: {
-        saveOrUpdatePublication() {
-            const url = this.publication
-                ? route('control-panel.releases.update', this.publication.id)
+        saveOrUpdateRelease() {
+            const url = this.release
+                ? route('control-panel.releases.update', this.release.id)
                 : route('control-panel.releases.save')
 
-            const method = this.publication ? 'put' : 'post'
+          const isUpdate = !!this.release
 
-            this.form[method](url, {
+            this.form.post(url, {
                 preserveScroll: true,
 
                 onSuccess: () => {
-                    if (method === 'post') {
-                        this.form.reset()
-                    }
+                  if (!isUpdate) {
+                    this.form.reset()
+                  }
 
-                    Swal.fire({
-                        toast: true,
-                        position: 'top-end',
-                        icon: 'success',
-                        title: this.alert.title,
-                        text: this.alert.message,
-                        showConfirmButton: false,
-                        timer: 2500,
-                    })
+                  Swal.fire({
+                      toast: true,
+                      position: 'top-end',
+                      icon: 'success',
+                      title: this.alert.title,
+                      text: this.alert.message,
+                      showConfirmButton: false,
+                      timer: 2500,
+                  })
                 },
 
                 onFail: (response) => {
