@@ -169,7 +169,7 @@ export default {
         }
     },
     mounted() {
-        if (this.publication) {
+        if (this.release) {
             this.page.title =  'Volumes > Editar'
             this.page.action = 'Editar '
             this.alert.title = "Volume alterado com sucesso!"
