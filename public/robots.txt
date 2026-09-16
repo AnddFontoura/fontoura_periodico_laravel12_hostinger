@@ -1,2 +1,9 @@
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /control-panel
+Disallow: /dashboard
+Disallow: /profile
+Disallow: /login
+Disallow: /register
+
+Sitemap: /periodico/sitemap.xml

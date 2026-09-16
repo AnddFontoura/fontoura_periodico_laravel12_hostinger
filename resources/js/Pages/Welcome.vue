@@ -1,4 +1,6 @@
 <template>
+    <SeoHead v-if="seo" :seo="seo" />
+
     <website-layout>
         <div
             v-html="homePage.description ?? null"
@@ -20,15 +22,21 @@
 <script>
 import PublicationRightMenu from '@/Components/Publications/PublicationRightMenu.vue'
 import WebsiteLayout from "@/Pages/Layouts/WebsiteLayout.vue";
+import SeoHead from "@/Components/SeoHead.vue";
 
 export default {
     components: {
         WebsiteLayout,
         PublicationRightMenu,
+        SeoHead,
     },
     props: {
         homePage: {
             type: Object,
+        },
+        seo: {
+            type: Object,
+            default: null,
         },
     },
     data() {

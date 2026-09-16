@@ -4,6 +4,8 @@
         <base href="{{ config('app.base') }}">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="index, follow">
+        <meta name="description" content="Biblioteca de artigos científicos e publicações da Fontoura Periódicos." inertia>
 
         <title inertia>{{ config('app.name', 'Fontoura Periódicos') }}</title>
 

@@ -13,6 +13,9 @@ use Inertia\Inertia;
 Route::get('/', [WebsiteController::class, 'index'])
     ->name('home');
 
+Route::get('/sitemap.xml', [WebsiteController::class, 'sitemap'])
+    ->name('sitemap');
+
 Route::get('/page/{pageSlug}', [WebsiteController::class, 'page'])
     ->name('home.page');
 
