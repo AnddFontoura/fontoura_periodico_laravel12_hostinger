@@ -6,12 +6,9 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class PageCreateOrUpdateRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +19,9 @@ class PageCreateOrUpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'required|string|max:100',
+            'description' => 'required|string|min:1',
+            'home_page' => 'nullable|boolean',
         ];
     }
 }

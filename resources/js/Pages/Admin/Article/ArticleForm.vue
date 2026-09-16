@@ -114,10 +114,12 @@
                                         "
                                     >
                                         <QuillEditor
-                                            v-model:content="form.authors"
+                                            ref="authorsEditor"
+                                            :content="form.authors"
                                             content-type="html"
                                             theme="snow"
                                             class="bg-white rounded border"
+                                            @update:content="form.authors = $event"
                                         />
                                     </div>
                                 </div>
@@ -137,10 +139,12 @@
                                         "
                                     >
                                         <QuillEditor
-                                            v-model:content="form.resume"
+                                            ref="resumeEditor"
+                                            :content="form.resume"
                                             content-type="html"
                                             theme="snow"
                                             class="bg-white rounded border"
+                                            @update:content="form.resume = $event"
                                         />
                                     </div>
                                 </div>
@@ -159,10 +163,12 @@
                                         "
                                     >
                                         <QuillEditor
-                                            v-model:content="form.abstract"
+                                            ref="abstractEditor"
+                                            :content="form.abstract"
                                             content-type="html"
                                             theme="snow"
                                             class="bg-white rounded border"
+                                            @update:content="form.abstract = $event"
                                         />
                                     </div>
                                 </div>
@@ -181,10 +187,12 @@
                                         "
                                     >
                                         <QuillEditor
-                                            v-model:content="form.keywords"
+                                            ref="keywordsEditor"
+                                            :content="form.keywords"
                                             content-type="html"
                                             theme="snow"
                                             class="bg-white rounded border"
+                                            @update:content="form.keywords = $event"
                                         />
                                     </div>
                                 </div>
@@ -307,9 +315,23 @@ export default {
             this.page.action = 'Editar '
             this.alert.title = "Artigo alterado com sucesso!"
             this.alert.message = "A alteração já foi executada."
+
+            this.$nextTick(() => {
+                this.setEditorContent('authorsEditor', this.form.authors)
+                this.setEditorContent('resumeEditor', this.form.resume)
+                this.setEditorContent('abstractEditor', this.form.abstract)
+                this.setEditorContent('keywordsEditor', this.form.keywords)
+            })
         }
     },
     methods: {
+        setEditorContent(ref, html) {
+            const editor = this.$refs[ref]
+
+            if (editor && html) {
+                editor.setHTML(html)
+            }
+        },
         saveOrUpdateArticle() {
             const url = this.article
                 ? route('control-panel.articles.update', this.article.id)

@@ -13,6 +13,7 @@ class Page extends Model
         'name',
         'description',
         'home_page',
+        'slug',
     ];
 
     protected $dates = [

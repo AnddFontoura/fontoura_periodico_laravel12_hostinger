@@ -25,4 +25,18 @@ final class PageRepository extends BaseRepository
             ->where('slug', $slug)
             ->first();
     }
+
+    /**
+     * Ensure a single home page exists by clearing the flag on every other page.
+     */
+    public function clearHomePageFlag(?int $exceptId = null): void
+    {
+        $query = $this->model->where('home_page', 1);
+
+        if ($exceptId !== null) {
+            $query->where('id', '!=', $exceptId);
+        }
+
+        $query->update(['home_page' => 0]);
+    }
 }

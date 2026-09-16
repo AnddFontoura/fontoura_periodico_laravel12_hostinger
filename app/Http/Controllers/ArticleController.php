@@ -55,8 +55,8 @@ class ArticleController extends Controller
             $article = $this->articleRepository->create($data);
         }
 
-        if ($data['pdf']) {
-            $fileName = Storage::disk('articles')->put('', $request['pdf']);
+        if ($request->hasFile('pdf')) {
+            $fileName = Storage::disk('articles')->put('', $request->file('pdf'));
 
             $article->path = $fileName;
             $article->save();
